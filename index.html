@@ -153,8 +153,8 @@
         }
         
         .group-stage {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 30px;
         }
         
@@ -235,37 +235,74 @@
         
         .standings {
             margin-top: 20px;
-            padding: 15px;
+            padding: 10px;
             background: rgba(0,0,0,0.3);
             border-radius: 8px;
+            width: 100%;
+            overflow: hidden;
         }
         
         .standings h4 {
             color: #4a9eff;
-            margin-bottom: 15px;
-            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
         
         .standings-table {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 0.7em;
+        }
+        
+        .standings-table th:nth-child(1),
+        .standings-table td:nth-child(1) {
+            width: 10%;
+        }
+        
+        .standings-table th:nth-child(2),
+        .standings-table td:nth-child(2) {
+            width: 30%;
+        }
+        
+        .standings-table th:nth-child(3),
+        .standings-table td:nth-child(3) {
+            width: 12%;
+        }
+        
+        .standings-table th:nth-child(4),
+        .standings-table td:nth-child(4) {
+            width: 12%;
+        }
+        
+        .standings-table th:nth-child(5),
+        .standings-table td:nth-child(5) {
+            width: 12%;
+        }
+        
+        .standings-table th:nth-child(6),
+        .standings-table td:nth-child(6) {
+            width: 12%;
         }
         
         .standings-table th,
         .standings-table td {
-            padding: 12px;
-            text-align: left;
+            padding: 3px 1px;
+            text-align: center;
             border-bottom: 1px solid #2a5aa0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         .standings-table th {
             color: #4a9eff;
             font-weight: bold;
-            font-size: 0.95em;
+            font-size: 0.7em;
         }
         
         .standings-table td {
-            font-size: 0.9em;
+            font-size: 0.7em;
         }
         
         .standings-table tr:hover {
@@ -275,6 +312,11 @@
         .team-name-cell {
             font-weight: bold;
             color: #ffffff;
+            text-align: left !important;
+            padding-left: 3px;
+            overflow: visible;
+            text-overflow: visible;
+            white-space: nowrap;
         }
         
         .elimination {
@@ -497,8 +539,8 @@
                         </li>
                         <li class="match-item">
                             <div class="match-teams">🆚 青烟队 vs 如来队</div>
-                            <div class="match-format">打5局 | 小分制</div>
-                            <div class="match-result match-pending">⏰ 待比赛</div>
+                            <div class="match-format">打5局 | 小分制 | 明晚21:30开赛</div>
+                            <div class="match-result match-live">🔴 明晚3月31日21:30</div>
                         </li>
                     </ul>
                     
@@ -552,7 +594,7 @@
                         <li class="match-item">
                             <div class="match-teams">🆚 炮哥队 vs 圈圈队</div>
                             <div class="match-format">打5局 | 小分制 | 今晚21:30</div>
-                            <div class="match-result match-live">🔴 今晚21:30开赛</div>
+                            <div class="match-result match-completed">✅ 已结束 | 炮哥队 3:2 圈圈队</div>
                         </li>
                         <li class="match-item">
                             <div class="match-teams">🆚 炮哥队 vs 爽子队</div>
@@ -583,26 +625,26 @@
                                 <tr>
                                     <td>1</td>
                                     <td class="team-name-cell">圈圈队</td>
+                                    <td>2</td>
+                                    <td>5</td>
+                                    <td>2</td>
+                                    <td class="score">5</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="team-name-cell">炮哥队</td>
                                     <td>1</td>
                                     <td>3</td>
                                     <td>2</td>
                                     <td class="score">3</td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
+                                    <td>3</td>
                                     <td class="team-name-cell">爽子队</td>
                                     <td>1</td>
                                     <td>2</td>
                                     <td>3</td>
                                     <td class="score">2</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="team-name-cell">炮哥队</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td class="score">0</td>
                                 </tr>
                             </tbody>
                         </table>
