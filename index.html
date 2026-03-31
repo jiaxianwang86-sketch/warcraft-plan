@@ -235,54 +235,51 @@
         
         .standings {
             margin-top: 20px;
-            padding: 10px;
+            padding: 15px;
             background: rgba(0,0,0,0.3);
             border-radius: 8px;
-            width: 100%;
-            overflow: hidden;
         }
         
         .standings h4 {
             color: #4a9eff;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
         
         .standings-table {
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
-            font-size: 0.7em;
         }
         
         .standings-table th:nth-child(1),
         .standings-table td:nth-child(1) {
-            width: 10%;
+            width: 8%;
         }
         
         .standings-table th:nth-child(2),
         .standings-table td:nth-child(2) {
-            width: 30%;
+            width: 32%;
         }
         
         .standings-table th:nth-child(3),
         .standings-table td:nth-child(3) {
-            width: 12%;
+            width: 10%;
         }
         
         .standings-table th:nth-child(4),
         .standings-table td:nth-child(4) {
-            width: 12%;
+            width: 10%;
         }
         
         .standings-table th:nth-child(5),
         .standings-table td:nth-child(5) {
-            width: 12%;
+            width: 10%;
         }
         
         .standings-table th:nth-child(6),
         .standings-table td:nth-child(6) {
-            width: 12%;
+            width: 15%;
         }
         
         .standings-table th,
@@ -293,15 +290,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-        }
-        
-        .standings-table th {
-            color: #4a9eff;
-            font-weight: bold;
-            font-size: 0.7em;
-        }
-        
-        .standings-table td {
             font-size: 0.7em;
         }
         
@@ -428,6 +416,64 @@
                 font-size: 1.1em;
             }
             
+            .standings-table {
+                font-size: 0.65em;
+                table-layout: fixed;
+            }
+            
+            .standings-table th,
+            .standings-table td {
+                padding: 2px 1px;
+            }
+            
+            .standings-table th:nth-child(1),
+            .standings-table td:nth-child(1) {
+                width: 6%;
+            }
+            
+            .standings-table th:nth-child(2),
+            .standings-table td:nth-child(2) {
+                width: 34%;
+            }
+            
+            .standings-table th:nth-child(3),
+            .standings-table td:nth-child(3) {
+                width: 10%;
+            }
+            
+            .standings-table th:nth-child(4),
+            .standings-table td:nth-child(4) {
+                width: 10%;
+            }
+            
+            .standings-table th:nth-child(5),
+            .standings-table td:nth-child(5) {
+                width: 10%;
+            }
+            
+            .standings-table th:nth-child(6),
+            .standings-table td:nth-child(6) {
+                width: 15%;
+            }
+            
+            .team-name-cell {
+                font-size: 0.6em;
+                padding-left: 2px;
+            }
+            
+            .group-title {
+                font-size: 1.4em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .standings h4 {
+                font-size: 1em;
+            }
+        }
+            
             .standings-table th,
             .standings-table td {
                 padding: 8px;
@@ -442,7 +488,7 @@
             <span class="live-badge">🔴 实时更新</span>
             <h1>🎮 人研所魔兽33对战赛程表 🎮</h1>
             <p class="subtitle">Warcraft III 3v3 Tournament Schedule</p>
-            <p class="update-time">最后更新：<span id="update-time">2026年3月28日 21:30</span></p>
+            <p class="update-time">最后更新：<span id="update-time">2026年3月31日 23:05</span></p>
         </header>
         
         <div class="edit-hint">
@@ -534,13 +580,13 @@
                         </li>
                         <li class="match-item">
                             <div class="match-teams">🆚 随笔队 vs 如来队</div>
-                            <div class="match-format">打5局 | 小分制</div>
-                            <div class="match-result match-pending">⏰ 待比赛</div>
+                            <div class="match-format">打5局 | 小分制 | 4月2日21:30开赛</div>
+                            <div class="match-result match-live">🔴 4月2日21:30</div>
                         </li>
                         <li class="match-item">
                             <div class="match-teams">🆚 青烟队 vs 如来队</div>
-                            <div class="match-format">打5局 | 小分制 | 明晚21:30开赛</div>
-                            <div class="match-result match-live">🔴 明晚3月31日21:30</div>
+                            <div class="match-format">打5局 | 小分制</div>
+                            <div class="match-result match-completed">✅ 已结束 | 如来队 4:1 青烟队</div>
                         </li>
                     </ul>
                     
@@ -561,26 +607,26 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td class="team-name-cell">青烟队</td>
+                                    <td class="team-name-cell">如来队</td>
                                     <td>1</td>
-                                    <td>5</td>
-                                    <td>0</td>
-                                    <td class="score">5</td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                    <td class="score">4</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
+                                    <td class="team-name-cell">青烟队</td>
+                                    <td>2</td>
+                                    <td>6</td>
+                                    <td>4</td>
+                                    <td class="score">6</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
                                     <td class="team-name-cell">随笔队</td>
                                     <td>1</td>
                                     <td>0</td>
                                     <td>5</td>
-                                    <td class="score">0</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="team-name-cell">如来队</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
                                     <td class="score">0</td>
                                 </tr>
                             </tbody>
