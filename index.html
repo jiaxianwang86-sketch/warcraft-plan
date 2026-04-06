@@ -644,8 +644,8 @@
                         </li>
                         <li class="match-item">
                             <div class="match-teams">🆚 炮哥队 vs 爽子队</div>
-                            <div class="match-format">打5局 | 小分制 | 4月5日22:00开赛</div>
-                            <div class="match-result match-upcoming">🔴 4月5日22:00</div>
+                            <div class="match-format">打5局 | 小分制</div>
+                            <div class="match-result match-completed">✅ 已结束 | 炮哥队 2:3 爽子队</div>
                         </li>
                         <li class="match-item">
                             <div class="match-teams">🆚 圈圈队 vs 爽子队</div>
@@ -673,27 +673,94 @@
                                     <td class="team-name-cell">圈圈队</td>
                                     <td>2</td>
                                     <td>5</td>
-                                    <td>2</td>
+                                    <td>5</td>
                                     <td class="score">5</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td class="team-name-cell">炮哥队</td>
-                                    <td>1</td>
-                                    <td>3</td>
                                     <td>2</td>
-                                    <td class="score">3</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td class="score">5</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td class="team-name-cell">爽子队</td>
-                                    <td>1</td>
                                     <td>2</td>
-                                    <td>3</td>
-                                    <td class="score">2</td>
+                                    <td>5</td>
+                                    <td>5</td>
+                                    <td class="score">5</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <p style="text-align: center; color: #ff6b35; font-weight: bold; margin-top: 10px;">
+                            🔥 三队同积5分，需加时赛决出名次！
+                        </p>
+                        
+                        <!-- 加时赛赛制说明 -->
+                        <div style="background: #ff6b35; color: white; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center;">
+                            <h5 style="margin: 0 0 10px 0; font-size: 18px;">🔴 加时赛安排</h5>
+                            <p style="margin: 5px 0; font-size: 16px;"><strong>⏰ 开赛时间：今晚 21:30</strong></p>
+                            <p style="margin: 5px 0; font-size: 14px;"><strong>赛制：</strong>BO3（三局两胜）</p>
+                            <p style="margin: 5px 0; font-size: 14px;"><strong>第1-2局：</strong>3V3，地图GW</p>
+                            <p style="margin: 5px 0; font-size: 14px;"><strong>第3局（如需）：</strong>2V2，地图TR/TM（掷骰子决定）</p>
+                            <p style="margin: 8px 0 5px 0; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 8px;">
+                                <strong>积分规则：</strong>赢一局积1分，败者0分
+                            </p>
+                            <p style="margin: 5px 0; font-size: 14px;">
+                                <strong>出线规则：</strong>3局打满后积分最多的前2名出线
+                            </p>
+                            <p style="margin: 5px 0; font-size: 14px; color: #ffe0b2;">
+                                ⚠️ 若再出现同积分，通过掷骰子决定出线名额
+                            </p>
+                        </div>
+                        
+                        <!-- B组加时赛积分表 -->
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                            <h4 style="color: white; margin: 0 0 15px 0; text-align: center; font-size: 18px;">🏆 B组加时赛积分榜</h4>
+                            <table class="standings-table" style="background: white;">
+                                <thead>
+                                    <tr>
+                                        <th>排名</th>
+                                        <th>队伍</th>
+                                        <th>胜场</th>
+                                        <th>负场</th>
+                                        <th>积分</th>
+                                        <th>状态</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>-</td>
+                                        <td class="team-name-cell">圈圈队</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td style="color: #ff9800;">⏳ 待比赛</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td class="team-name-cell">炮哥队</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td style="color: #ff9800;">⏳ 待比赛</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td class="team-name-cell">爽子队</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td style="color: #ff9800;">⏳ 待比赛</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #e0e0e0; font-size: 12px; text-align: center; margin-top: 10px;">
+                                📌 加时赛采用循环赛制，胜一场积1分，败者0分，积分最高的前2名出线
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -703,7 +770,78 @@
             <h2 class="section-title">🏆 双败淘汰阶段</h2>
             <div class="elimination editable-section">
                 <div class="bracket-section">
-                    <h3 class="bracket-title">👑 双败淘汰赛流程</h3>
+                    <h3 class="bracket-title">👑 胜者组</h3>
+                    
+                    <div class="bracket-round">
+                        <div class="round-name">胜者组第一轮</div>
+                        <ul class="match-list">
+                            <li class="match-item">
+                                <div class="match-teams">🆚 A组第1名（如来队） vs B组第2名（待加时赛决出）</div>
+                                <div class="match-format">BO5五局三胜 | 胜者进入胜者组决赛</div>
+                                <div class="match-result match-pending">⏰ 待B组加时赛结束后确定对阵</div>
+                            </li>
+                            <li class="match-item">
+                                <div class="match-teams">🆚 B组第1名（待加时赛决出） vs A组第2名（青烟队）</div>
+                                <div class="match-format">BO5五局三胜 | 胜者进入胜者组决赛</div>
+                                <div class="match-result match-pending">⏰ 待B组加时赛结束后确定对阵</div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bracket-round">
+                        <div class="round-name">胜者组决赛</div>
+                        <ul class="match-list">
+                            <li class="match-item">
+                                <div class="match-teams">🆚 胜者组第一轮胜者 A vs 胜者组第一轮胜者 B</div>
+                                <div class="match-format">BO5五局三胜 | 胜者进入总决赛（带1-0优势）</div>
+                                <div class="match-result match-pending">⏰ 待比赛</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bracket-section">
+                    <h3 class="bracket-title">💀 败者组</h3>
+                    
+                    <div class="bracket-round">
+                        <div class="round-name">败者组第一轮</div>
+                        <ul class="match-list">
+                            <li class="match-item">
+                                <div class="match-teams">🆚 胜者组第一轮败者 A vs 胜者组第一轮败者 B</div>
+                                <div class="match-format">BO5五局三胜 | 胜者进入败者组决赛，败者淘汰</div>
+                                <div class="match-result match-pending">⏰ 待比赛</div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bracket-round">
+                        <div class="round-name">败者组决赛</div>
+                        <ul class="match-list">
+                            <li class="match-item">
+                                <div class="match-teams">🆚 胜者组决赛败者 vs 败者组第一轮胜者</div>
+                                <div class="match-format">BO5五局三胜 | 胜者进入总决赛</div>
+                                <div class="match-result match-pending">⏰ 待比赛</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bracket-section">
+                    <h3 class="bracket-title">👑 总决赛</h3>
+                    
+                    <div class="bracket-round">
+                        <div class="round-name">总决赛</div>
+                        <ul class="match-list">
+                            <li class="match-item">
+                                <div class="match-teams">🆚 胜者组决赛胜者（带1-0优势） vs 败者组决赛胜者</div>
+                                <div class="match-format">BO5五局三胜 | 胜者组冠军带1-0优势进入总决赛</div>
+                                <div class="match-result match-pending">⏰ 待比赛</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
                     
                     <div class="bracket-round">
                         <div class="round-name">第一轮（4支队伍）</div>
