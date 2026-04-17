@@ -3,1887 +3,811 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人研所魔兽33对战赛程表 - 实时更新</title>
+    <title>🏆 魔兽33总决赛巅峰对决 - 选手巡礼预热</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
-            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
-            min-height: 100vh;
-            color: #ffffff;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            line-height: 1.6;
         }
-        
+
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        .header {
+
+        /* Hero Section */
+        .hero {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, rgba(0,100,200,0.3) 0%, rgba(0,50,150,0.5) 100%);
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 2px solid #4a9eff;
-            box-shadow: 0 0 30px rgba(74, 158, 255, 0.3);
-        }
-        
-        .header h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            color: #4a9eff;
-        }
-        
-        .header .subtitle {
-            font-size: 1.2em;
-            color: #a0c4ff;
-            margin-bottom: 20px;
-        }
-        
-        .live-badge {
-            display: inline-block;
-            background: #ff4444;
-            color: white;
-            padding: 5px 15px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
             border-radius: 20px;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-            animation: pulse 2s infinite;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.3);
         }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
-        .update-time {
-            font-size: 0.9em;
-            color: #7a9fd4;
+
+        .match-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
-        
+
+        .match-info-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Section Styles */
         .section {
-            background: rgba(20,40,80,0.8);
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* Team Colors */
+        .qingyan-team {
+            border-left: 5px solid #4a90d9;
+            border-right: 5px solid #4a90d9;
+        }
+
+        .quanquan-team {
+            border-left: 5px solid #ff9f43;
+            border-right: 5px solid #ff9f43;
+        }
+
+        /* Player Cards */
+        .player-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .player-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
             border-radius: 15px;
             padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid #3a7fd9;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .section-title {
-            font-size: 2em;
-            color: #4a9eff;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #4a9eff;
+
+        .player-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .qingyan-card {
+            border-color: #4a90d9;
+        }
+
+        .qingyan-card::before {
+            background: linear-gradient(90deg, #4a90d9, #74b9ff);
+        }
+
+        .quanquan-card {
+            border-color: #ff9f43;
+        }
+
+        .quanquan-card::before {
+            background: linear-gradient(90deg, #ff9f43, #ff6b6b);
+        }
+
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .player-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .player-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: 15px;
+        }
+
+        .player-info h3 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .player-info .role {
+            font-size: 16px;
+            color: #a0a0a0;
+        }
+
+        .player-quote {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-style: italic;
+            font-size: 16px;
+        }
+
+        .player-features {
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .feature-item .emoji {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .player-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 8px;
             text-align: center;
         }
-        
-        .rules {
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff9f43;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #a0a0a0;
+        }
+
+        /* Prediction Section */
+        .prediction-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .prediction-item {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 20px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .prediction-percentage {
+            font-size: 64px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .qingyan-percent {
+            color: #4a90d9;
+        }
+
+        .quanquan-percent {
+            color: #ff9f43;
+        }
+
+        /* Matchup Analysis */
+        .matchup-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-bottom: 30px;
+            margin-top: 30px;
         }
-        
-        .rule-card {
-            background: rgba(74, 158, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #4a9eff;
-        }
-        
-        .rule-card h3 {
-            color: #4a9eff;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-        
-        .rule-card p {
-            color: #c0d8ff;
-            line-height: 1.6;
-        }
-        
-        .team-info {
-            background: rgba(255, 193, 7, 0.1);
-            border: 2px solid #ffc107;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-        
-        .team-info h3 {
-            color: #ffc107;
-            margin-bottom: 15px;
-            font-size: 1.4em;
+
+        .matchup-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 15px;
             text-align: center;
         }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+        .matchup-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #ff9f43;
+        }
+
+        .matchup-vs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 20px;
+            margin: 20px 0;
         }
-        
-        .team-card {
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #2a5aa0;
-        }
-        
-        .team-name {
-            font-size: 1.2em;
-            color: #4a9eff;
-            margin-bottom: 10px;
+
+        .matchup-player {
+            font-size: 18px;
             font-weight: bold;
         }
-        
-        .team-members {
-            color: #a0c4ff;
-            font-size: 0.95em;
+
+        .vs-symbol {
+            font-size: 24px;
+            color: #e94560;
+        }
+
+        /* Tactical Analysis */
+        .tactical-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .tactical-card {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 107, 107, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .tactical-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+
+        .tactical-content {
+            font-size: 16px;
             line-height: 1.8;
         }
-        
-        .group-stage {
+
+        /* Final Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+
+        .cta-title {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .cta-questions {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 15px;
+            margin: 30px 0;
         }
-        
-        .group {
-            background: rgba(0,0,0,0.3);
-            border-radius: 15px;
-            padding: 25px;
-            border: 2px solid #2a5aa0;
-        }
-        
-        .group-title {
-            font-size: 1.8em;
-            color: #4a9eff;
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #2a5aa0;
-        }
-        
-        .match-list {
-            list-style: none;
-        }
-        
-        .match-item {
-            background: rgba(74, 158, 255, 0.05);
-            margin-bottom: 15px;
-            padding: 15px 20px;
-            border-radius: 8px;
-            border-left: 3px solid #4a9eff;
-            transition: all 0.3s ease;
-        }
-        
-        .match-item:hover {
-            background: rgba(74, 158, 255, 0.15);
-            transform: translateX(5px);
-        }
-        
-        .match-teams {
-            font-size: 1.3em;
-            margin-bottom: 8px;
-            color: #ffffff;
+
+        .cta-question {
+            font-size: 22px;
             font-weight: bold;
+            color: #fff;
         }
-        
-        .match-result {
-            margin-top: 10px;
-            padding: 8px;
-            border-radius: 5px;
-            font-size: 0.95em;
-        }
-        
-        .match-pending {
-            background: rgba(255, 193, 7, 0.1);
-            color: #ffc107;
-        }
-        
-        .match-completed {
-            background: rgba(76, 175, 80, 0.1);
-            color: #81c784;
-        }
-        
-        .match-live {
-            background: rgba(255, 67, 54, 0.2);
-            color: #ff5252;
-            animation: pulse 1.5s infinite;
-        }
-        
-        .match-format {
-            color: #7a9fd4;
-            font-size: 0.9em;
-        }
-        
-        .score {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #4a9eff;
-        }
-        
-        .standings {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 8px;
-        }
-        
-        .standings h4 {
-            color: #4a9eff;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        
-        .standings-table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-        
-        .standings-table th:nth-child(1),
-        .standings-table td:nth-child(1) {
-            width: 8%;
-        }
-        
-        .standings-table th:nth-child(2),
-        .standings-table td:nth-child(2) {
-            width: 32%;
-        }
-        
-        .standings-table th:nth-child(3),
-        .standings-table td:nth-child(3) {
-            width: 10%;
-        }
-        
-        .standings-table th:nth-child(4),
-        .standings-table td:nth-child(4) {
-            width: 10%;
-        }
-        
-        .standings-table th:nth-child(5),
-        .standings-table td:nth-child(5) {
-            width: 10%;
-        }
-        
-        .standings-table th:nth-child(6),
-        .standings-table td:nth-child(6) {
-            width: 15%;
-        }
-        
-        .standings-table th,
-        .standings-table td {
-            padding: 3px 1px;
-            text-align: center;
-            border-bottom: 1px solid #2a5aa0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: 0.7em;
-        }
-        
-        .standings-table tr:hover {
-            background: rgba(74, 158, 255, 0.1);
-        }
-        
-        .team-name-cell {
-            font-weight: bold;
-            color: #ffffff;
-            text-align: left !important;
-            padding-left: 3px;
-            overflow: visible;
-            text-overflow: visible;
-            white-space: nowrap;
-        }
-        
-        .elimination {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-        }
-        
-        .bracket-section {
-            background: rgba(0,0,0,0.2);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        
-        .bracket-title {
-            font-size: 1.4em;
-            color: #4a9eff;
-            margin-bottom: 15px;
-            padding: 10px;
-            background: rgba(74, 158, 255, 0.2);
-            border-radius: 5px;
-        }
-        
-        .bracket-round {
-            margin-bottom: 25px;
-        }
-        
-        .round-name {
-            font-size: 1.1em;
-            color: #a0c4ff;
-            margin-bottom: 12px;
-            font-weight: bold;
-        }
-        
-        .special-note {
-            background: rgba(255, 200, 50, 0.1);
-            border: 2px solid #ffc832;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .special-note h4 {
-            color: #ffc832;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-        
-        .special-note p {
-            color: #ffe699;
-            line-height: 1.6;
-        }
-        
+
+        /* Footer */
         .footer {
             text-align: center;
             padding: 30px;
-            color: #7a9fd4;
-            margin-top: 40px;
+            color: #a0a0a0;
+            font-size: 14px;
         }
-        
-        .highlight {
-            color: #4a9eff;
-            font-weight: bold;
-        }
-        
-        .edit-hint {
-            background: rgba(255, 67, 54, 0.1);
-            border: 1px dashed #ff5252;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 0.9em;
-            color: #ff8a80;
-        }
-        
-        .editable-section {
-            position: relative;
-        }
-        
-        .editable-section:hover::after {
-            content: '✏️ 可编辑';
-            position: absolute;
-            top: -25px;
-            right: 0;
-            background: #ff5252;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 3px;
-            font-size: 0.8em;
-        }
-        
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
+            .hero h1 {
+                font-size: 32px;
             }
-            
-            .section {
-                padding: 20px;
+
+            .match-info {
+                flex-direction: column;
+                gap: 15px;
             }
-            
-            .team-grid,
-            .group-stage,
-            .elimination {
+
+            .player-cards {
                 grid-template-columns: 1fr;
             }
-            
-            .match-teams {
-                font-size: 1.1em;
-            }
-            
-            .standings-table {
-                font-size: 0.65em;
-                table-layout: fixed;
-            }
-            
-            .standings-table th,
-            .standings-table td {
-                padding: 2px 1px;
-            }
-            
-            .standings-table th:nth-child(1),
-            .standings-table td:nth-child(1) {
-                width: 6%;
-            }
-            
-            .standings-table th:nth-child(2),
-            .standings-table td:nth-child(2) {
-                width: 34%;
-            }
-            
-            .standings-table th:nth-child(3),
-            .standings-table td:nth-child(3) {
-                width: 10%;
-            }
-            
-            .standings-table th:nth-child(4),
-            .standings-table td:nth-child(4) {
-                width: 10%;
-            }
-            
-            .standings-table th:nth-child(5),
-            .standings-table td:nth-child(5) {
-                width: 10%;
-            }
-            
-            .standings-table th:nth-child(6),
-            .standings-table td:nth-child(6) {
-                width: 15%;
-            }
-            
-            .team-name-cell {
-                font-size: 0.6em;
-                padding-left: 2px;
-            }
-            
-            .group-title {
-                font-size: 1.4em;
-            }
-            
+
             .section-title {
-                font-size: 1.5em;
+                font-size: 28px;
             }
-            
-            .standings h4 {
-                font-size: 1em;
-            }
-        }
-            
-            .standings-table th,
-            .standings-table td {
-                padding: 8px;
-                font-size: 0.85em;
+
+            .prediction-percentage {
+                font-size: 48px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="header editable-section">
-            <span class="live-badge">🔴 实时更新</span>
-            <h1>🎮 人研所魔兽33对战赛程表 🎮</h1>
-            <p class="subtitle">Warcraft III 3v3 Tournament Schedule</p>
-            <p class="update-time">最后更新：<span id="update-time">2026年3月31日 23:05</span></p>
-        </header>
-        
-        <div class="edit-hint">
-            💡 <strong>编辑提示：</strong>您可以直接在网页源代码中编辑以下内容，保存后即可实时更新。具体编辑位置已在代码中标注。
-        </div>
-        
-        <section class="section">
-            <h2 class="section-title">📋 赛制规则</h2>
-            <div class="rules editable-section">
-                <div class="rule-card">
-                    <h3>🏆 比赛赛制</h3>
-                    <p><strong>小组赛：</strong>打5局（小分制）<br>
-                    <strong>淘汰赛：</strong>BO5（五局三胜制）<br>
-                    <strong>总决赛：</strong>BO5（五局三胜制）</p>
-                </div>
-                <div class="rule-card">
-                    <h3>🗺️ 地图安排</h3>
-                    <p><strong>第1-3局（3V3）：</strong>GW地图<br>
-                    <strong>第4-5局（2V2）：</strong>TR、TM地图</p>
-                </div>
-                <div class="rule-card">
-                    <h3>📊 积分规则</h3>
-                    <p><strong>小组赛：</strong>按小分累计，每赢1局得1分，输0分，每组前2名晋级<br>
-                    <strong>淘汰赛：</strong>按大比分计算，BO5谁先赢3局就晋级</p>
-                </div>
-                <div class="rule-card">
-                    <h3>⚠️ 违规处罚</h3>
-                    <p><strong>迟到15分钟内：</strong>集体声讨<br>
-                    <strong>迟到15-30分钟：</strong>判输一局<br>
-                    <strong>迟到超30分钟：</strong>按0:3比分结束<br>
-                    <strong>弃权处罚：</strong>弃权一局判负，完全弃权0:3判负，无故弃权罚款60元/次</p>
-                </div>
-                <div class="rule-card">
-                    <h3>⚡ 特别规则</h3>
-                    <p>胜者组决赛的胜者将在总决赛中<span class="highlight">带1-0优势</span>进入最终BO5决战</p>
-                </div>
-                <div class="rule-card">
-                    <h3>👥 参赛队伍</h3>
-                    <p><strong>6支队伍</strong>，每队3人<br>
-                    <strong>A组：</strong>随笔队、青烟队、如来队<br>
-                    <strong>B组：</strong>炮哥队、圈圈队、爽子队</p>
-                </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>🏆 魔兽33总决赛巅峰对决 - 选手巡礼预热</h1>
+            <p style="font-size: 24px; margin-top: 20px;">🔥 不败神话 vs 逆袭传奇 🔥</p>
+            
+            <div class="match-info">
+                <div class="match-info-item">📅 2026年4月17日晚（今晚）</div>
+                <div class="match-info-item">🎯 青烟队 vs 圈圈队</div>
+                <div class="match-info-item">📋 BO5五局三胜（青烟队带1-0优势）</div>
             </div>
         </section>
-        
-        <section class="section">
-            <h2 class="section-title">👥 队伍阵容</h2>
-            <div class="team-info editable-section">
-                <h3>战队成员名单</h3>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-name">🎮 随笔队</div>
-                        <div class="team-members">随笔、马里奥、强森</div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-name">🎮 青烟队</div>
-                        <div class="team-members">青烟、杀鸡、RAY</div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-name">🎮 如来队</div>
-                        <div class="team-members">如来、长岛、寒冰</div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-name">🎮 炮哥队</div>
-                        <div class="team-members">鸡枪手、老虎、胖哥</div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-name">🎮 圈圈队</div>
-                        <div class="team-members">圈圈、眼泪、节制</div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-name">🎮 爽子队</div>
-                        <div class="team-members">爽子、中山、蚂蚁</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2 class="section-title">🎯 小组赛阶段</h2>
-            <div class="group-stage">
-                <div class="group editable-section">
-                    <h3 class="group-title">A组</h3>
-                    <ul class="match-list">
-                        <li class="match-item">
-                            <div class="match-teams">🆚 随笔队 vs 青烟队</div>
-                            <div class="match-format">打5局 | 小分制</div>
-                            <div class="match-result match-completed">✅ 已结束 | 青烟队 5:0 随笔队</div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-teams">🆚 随笔队 vs 如来队</div>
-                            <div class="match-format">打5局 | 小分制</div>
-                            <div class="match-result match-completed">✅ 已结束 | 如来队 3:0 随笔队（随笔队弃权）</div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-teams">🆚 青烟队 vs 如来队</div>
-                            <div class="match-format">打5局 | 小分制</div>
-                            <div class="match-result match-completed">✅ 已结束 | 如来队 4:1 青烟队</div>
-                        </li>
-                    </ul>
-                    
-                    <!-- 编辑积分榜：修改积分和排名 -->
-                    <div class="standings editable-section">
-                        <h4>📊 A组积分榜</h4>
-                        <table class="standings-table">
-                            <thead>
-                                <tr>
-                                    <th>排名</th>
-                                    <th>队伍</th>
-                                    <th>比赛</th>
-                                    <th>胜局</th>
-                                    <th>负局</th>
-                                    <th>小分</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="team-name-cell">如来队</td>
-                                    <td>2</td>
-                                    <td>7</td>
-                                    <td>1</td>
-                                    <td class="score">7</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="team-name-cell">青烟队</td>
-                                    <td>2</td>
-                                    <td>6</td>
-                                    <td>4</td>
-                                    <td class="score">6</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="team-name-cell">随笔队</td>
-                                    <td>2</td>
-                                    <td>0</td>
-                                    <td>8</td>
-                                    <td class="score">0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-                <div class="group editable-section">
-                    <h3 class="group-title">B组</h3>
-                    <ul class="match-list">
-                        <li class="match-item">
-                            <div class="match-teams">🆚 炮哥队 vs 圈圈队</div>
-                            <div class="match-format">打5局 | 小分制 | 今晚21:30</div>
-                            <div class="match-result match-completed">✅ 已结束 | 炮哥队 3:2 圈圈队</div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-teams">🆚 炮哥队 vs 爽子队</div>
-                            <div class="match-format">打5局 | 小分制</div>
-                            <div class="match-result match-completed">✅ 已结束 | 炮哥队 2:3 爽子队</div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-teams">🆚 圈圈队 vs 爽子队</div>
-                            <div class="match-format">打5局 | 小分制</div>
-                            <div class="match-result match-completed">✅ 已结束 | 圈圈队 3:2 爽子队</div>
-                        </li>
-                    </ul>
-                    
-                    <div class="standings editable-section">
-                        <h4>📊 B组积分榜</h4>
-                        <table class="standings-table">
-                            <thead>
-                                <tr>
-                                    <th>排名</th>
-                                    <th>队伍</th>
-                                    <th>比赛</th>
-                                    <th>胜局</th>
-                                    <th>负局</th>
-                                    <th>小分</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="team-name-cell">圈圈队</td>
-                                    <td>2</td>
-                                    <td>5</td>
-                                    <td>5</td>
-                                    <td class="score">5</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="team-name-cell">炮哥队</td>
-                                    <td>2</td>
-                                    <td>5</td>
-                                    <td>5</td>
-                                    <td class="score">5</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="team-name-cell">爽子队</td>
-                                    <td>2</td>
-                                    <td>5</td>
-                                    <td>5</td>
-                                    <td class="score">5</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p style="text-align: center; color: #ff6b35; font-weight: bold; margin-top: 10px;">
-                            🔥 三队同积5分，需加时赛决出名次！
-                        </p>
-                        
-                        <!-- 加时赛赛制说明 -->
-                        <div style="background: #ff6b35; color: white; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center;">
-                            <h5 style="margin: 0 0 10px 0; font-size: 18px;">🔴 加时赛安排</h5>
-                            <p style="margin: 5px 0; font-size: 16px;"><strong>⏰ 开赛时间：今晚 21:30</strong></p>
-                            <p style="margin: 5px 0; font-size: 14px;"><strong>赛制：</strong>BO3（三局两胜）</p>
-                            <p style="margin: 5px 0; font-size: 14px;"><strong>第1-2局：</strong>3V3，地图GW</p>
-                            <p style="margin: 5px 0; font-size: 14px;"><strong>第3局（如需）：</strong>2V2，地图TR/TM（掷骰子决定）</p>
-                            <p style="margin: 8px 0 5px 0; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 8px;">
-                                <strong>积分规则：</strong>赢一局积1分，败者0分
-                            </p>
-                            <p style="margin: 5px 0; font-size: 14px;">
-                                <strong>出线规则：</strong>3局打满后积分最多的前2名出线
-                            </p>
-                            <p style="margin: 5px 0; font-size: 14px; color: #ffe0b2;">
-                                ⚠️ 若再出现同积分，通过掷骰子决定出线名额
-                            </p>
+
+        <!-- Qingyan Team Section -->
+        <section class="section qingyan-team">
+            <h2 class="section-title">🔵 青烟队 - 战术体系的巅峰展现</h2>
+            
+            <div class="player-cards">
+                <!-- Qingyan Player -->
+                <div class="player-card qingyan-card">
+                    <div class="player-header">
+                        <div class="player-icon">🏆</div>
+                        <div class="player-info">
+                            <h3>青烟</h3>
+                            <p class="role">人族 - 战术大师</p>
                         </div>
-                        
-                        <!-- B组加时赛积分表 -->
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                            <h4 style="color: white; margin: 0 0 15px 0; text-align: center; font-size: 18px;">🏆 B组加时赛积分榜</h4>
-                            <table class="standings-table" style="background: white;">
-                                <thead>
-                                    <tr>
-                                        <th>排名</th>
-                                        <th>队伍</th>
-                                        <th>胜场</th>
-                                        <th>负场</th>
-                                        <th>积分</th>
-                                        <th>状态</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>-</td>
-                                        <td class="team-name-cell">圈圈队</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td style="color: #ff9800;">⏳ 待比赛</td>
-                                    </tr>
-                                    <tr>
-                                        <td>-</td>
-                                        <td class="team-name-cell">炮哥队</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td style="color: #ff9800;">⏳ 待比赛</td>
-                                    </tr>
-                                    <tr>
-                                        <td>-</td>
-                                        <td class="team-name-cell">爽子队</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td style="color: #ff9800;">⏳ 待比赛</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p style="color: #e0e0e0; font-size: 12px; text-align: center; margin-top: 10px;">
-                                📌 加时赛采用循环赛制，胜一场积1分，败者0分，积分最高的前2名出线
-                            </p>
+                    </div>
+                    <div class="player-quote">
+                        "受启于中山人族的开矿打法，逐步完善细节，目前以青烟为中心，队友配合的前期开矿打法无解。"
+                    </div>
+                    <div class="player-features">
+                        <div class="feature-item">
+                            <span class="emoji">🎯</span> 战术核心：承中山人族精髓，将开矿战术打磨至极致
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🏰</span> 运营大师：前期开矿节奏掌控完美，经济优势滚雪球无解
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🤝</span> 团队纽带：以自己为中心，队友配合默契，团队体系化作战
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">📈</span> 战术进化：在经典基础上不断改进细节，形成独门绝学
+                        </div>
+                    </div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">16/18</div>
+                            <div class="stat-label">胜场/负场</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">47.06%</div>
+                            <div class="stat-label">胜率</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">A级</div>
+                            <div class="stat-label">选族战力</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">-2</div>
+                            <div class="stat-label">净胜场</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shaji Player -->
+                <div class="player-card qingyan-card">
+                    <div class="player-header">
+                        <div class="player-icon">⚔️</div>
+                        <div class="player-info">
+                            <h3>杀鸡</h3>
+                            <p class="role">兽族 - 暴力输出</p>
+                        </div>
+                    </div>
+                    <div class="player-quote">
+                        "强悍的操作，加上强大的意识和大局观，一个字很硬。"
+                    </div>
+                    <div class="player-features">
+                        <div class="feature-item">
+                            <span class="emoji">💪</span> 操作精湛：微操细腻，战斗节奏掌控出色
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🧠</span> 意识超群：强大的大局观，战斗嗅觉敏锐
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">⚔️</span> 暴力美学：正面硬刚的战斗风格，对手不敢轻视
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🎯</span> 关键先生：大赛经验丰富，关键时刻从不手软
+                        </div>
+                    </div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">3/1</div>
+                            <div class="stat-label">胜场/负场</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">75.00%</div>
+                            <div class="stat-label">胜率</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">S级</div>
+                            <div class="stat-label">选族战力</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">+2</div>
+                            <div class="stat-label">净胜场</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RAY Player -->
+                <div class="player-card qingyan-card">
+                    <div class="player-header">
+                        <div class="player-icon">🌲</div>
+                        <div class="player-info">
+                            <h3>RAY</h3>
+                            <p class="role">暗夜精灵 - 天梯霸主</p>
+                        </div>
+                    </div>
+                    <div class="player-quote">
+                        "常年霸榜天梯前列的暗夜选手，前期一手KOG女猎，打倒群内一众高手大神。"
+                    </div>
+                    <div class="player-features">
+                        <div class="feature-item">
+                            <span class="emoji">🏅</span> 天梯王者：常年位居天梯前列，暗夜精灵的顶尖高手
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🎯</span> 战术专精：前期KOG女猎战术炉火纯青，出其不意
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">⚔️</span> 高手杀手：专门克制群内各路高手，战术针对性极强
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🦌</span> 种族精通：对暗夜精灵的理解达到大师级别
+                        </div>
+                    </div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">22/21</div>
+                            <div class="stat-label">胜场/负场</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">51.16%</div>
+                            <div class="stat-label">胜率</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">S级</div>
+                            <div class="stat-label">选族战力</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">+1</div>
+                            <div class="stat-label">净胜场</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
+        <!-- Quanquan Team Section -->
+        <section class="section quanquan-team">
+            <h2 class="section-title">🟠 圈圈队 - 逆袭传奇的终极舞台</h2>
+            
+            <div class="player-cards">
+                <!-- Quanquan Player -->
+                <div class="player-card quanquan-card">
+                    <div class="player-header">
+                        <div class="player-icon">⭕</div>
+                        <div class="player-info">
+                            <h3>圈圈</h3>
+                            <p class="role">人族 - 浴火重生</p>
+                        </div>
+                    </div>
+                    <div class="player-quote">
+                        "曾被称作无下限选手，多好的局势能都拉胯。但是这次比赛中多次亮点表现，助力队友获得关键胜利。"
+                    </div>
+                    <div class="player-features">
+                        <div class="feature-item">
+                            <span class="emoji">📉</span> 过往争议：曾是"无下限选手"，大好局面屡次翻车
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🔥</span> 浴火重生：本届比赛脱胎换骨，多次关键时刻拯救队伍
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">⭐</span> 逆境英雄：在绝境中爆发惊人实力，成为逆袭传奇的缩影
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">💪</span> 蜕变成长：从"拉胯王"到"关键先生"，完成了令人瞩目的蜕变
+                        </div>
+                    </div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">27/29</div>
+                            <div class="stat-label">胜场/负场</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">44.26%</div>
+                            <div class="stat-label">胜率</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">B级</div>
+                            <div class="stat-label">选族战力</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">-2</div>
+                            <div class="stat-label">净胜场</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yanlei Player -->
+                <div class="player-card quanquan-card">
+                    <div class="player-header">
+                        <div class="player-icon">😭</div>
+                        <div class="player-info">
+                            <h3>眼泪</h3>
+                            <p class="role">兽族 - 坚韧卫士</p>
+                        </div>
+                    </div>
+                    <div class="player-quote">
+                        "群内数一数二的兽族高手，多次在关键比赛中发挥极强的实力，硬硬把队伍从悬崖边缘拉回来，与节制搭配的22比赛，目前胜率最高，最佳22组合。"
+                    </div>
+                    <div class="player-features">
+                        <div class="feature-item">
+                            <span class="emoji">🥉</span> 兽族权威：群内顶尖兽族选手，操作和意识并重
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">💪</span> 绝境英雄：多次在关键比赛中力挽狂澜，从悬崖边缘拉回队伍
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🤝</span> 最佳搭档：与节制组成的2v2组合目前胜率最高，被称为"最佳22组合"
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🛡️</span> 坚韧不拔：从不放弃，总能在绝境中找到突破口
+                        </div>
+                    </div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">9/9</div>
+                            <div class="stat-label">胜场/负场</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">50.00%</div>
+                            <div class="stat-label">胜率</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">S级</div>
+                            <div class="stat-label">选族战力</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">净胜场</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jiezhi Player -->
+                <div class="player-card quanquan-card">
+                    <div class="player-header">
+                        <div class="player-icon">⏰</div>
+                        <div class="player-info">
+                            <h3>节制</h3>
+                            <p class="role">人族 - 意识宗师</p>
+                        </div>
+                    </div>
+                    <div class="player-quote">
+                        "传统人族高手代表之一，33比较强，22非常强，意识上乘，配合强。"
+                    </div>
+                    <div class="player-features">
+                        <div class="feature-item">
+                            <span class="emoji">🎯</span> 意识大师：传统人族高手的典型代表，意识层面达到宗师级别
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">👥</span> 配合专家：33能力强，22能力更强，团队配合的核心人物
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🤝</span> 黄金搭档：与眼泪组成的2v2组合胜率最高，是圈圈队的王牌
+                        </div>
+                        <div class="feature-item">
+                            <span class="emoji">🧠</span> 战术大脑：大局观出色，往往能在关键时刻做出正确判断
+                        </div>
+                    </div>
+                    <div class="player-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">31/22</div>
+                            <div class="stat-label">胜场/负场</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">58.49%</div>
+                            <div class="stat-label">胜率</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">S级</div>
+                            <div class="stat-label">选族战力</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">+9</div>
+                            <div class="stat-label">净胜场</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tactical Analysis Section -->
         <section class="section">
-            <h2 class="section-title">🏆 双败淘汰阶段</h2>
-            <div class="elimination editable-section">
-                <div class="bracket-section">
-                    <h3 class="bracket-title">👑 胜者组</h3>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">胜者组第一轮</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 A组第1名（如来队） vs B组第2名（待加时赛决出）</div>
-                                <div class="match-format">BO5五局三胜 | 胜者进入胜者组决赛</div>
-                                <div class="match-result match-pending">⏰ 待B组加时赛结束后确定对阵</div>
-                            </li>
-                            <li class="match-item">
-                                <div class="match-teams">🆚 B组第1名（待加时赛决出） vs A组第2名（青烟队）</div>
-                                <div class="match-format">BO5五局三胜 | 胜者进入胜者组决赛</div>
-                                <div class="match-result match-pending">⏰ 待B组加时赛结束后确定对阵</div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">胜者组决赛</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 胜者组第一轮胜者 A vs 胜者组第一轮胜者 B</div>
-                                <div class="match-format">BO5五局三胜 | 胜者进入总决赛（带1-0优势）</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="bracket-section">
-                    <h3 class="bracket-title">💀 败者组</h3>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">败者组第一轮</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 胜者组第一轮败者 A vs 胜者组第一轮败者 B</div>
-                                <div class="match-format">BO5五局三胜 | 胜者进入败者组决赛，败者淘汰</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">败者组决赛</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 胜者组决赛败者 vs 败者组第一轮胜者</div>
-                                <div class="match-format">BO5五局三胜 | 胜者进入总决赛</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="bracket-section">
-                    <h3 class="bracket-title">👑 总决赛</h3>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">总决赛</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 胜者组决赛胜者（带1-0优势） vs 败者组决赛胜者</div>
-                                <div class="match-format">BO5五局三胜 | 胜者组冠军带1-0优势进入总决赛</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">第一轮（4支队伍）</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 A组第1名 vs B组第2名</div>
-                                <div class="match-format">BO5 | 胜者进入胜者组，败者进入败者组</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                            <li class="match-item">
-                                <div class="match-teams">🆚 B组第1名 vs A组第2名</div>
-                                <div class="match-format">BO5 | 胜者进入胜者组，败者进入败者组</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">胜者组决赛</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 第一轮胜者 A vs 第一轮胜者 B</div>
-                                <div class="match-format">BO5 | 胜者为胜者组第一，败者为胜者组第二</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">败者组第一轮</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 第一轮败者 A vs 第一轮败者 B</div>
-                                <div class="match-format">BO5 | 胜者为败者组第一，败者直接淘汰</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">败者组决赛</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 胜者组第二 vs 败者组第一</div>
-                                <div class="match-format">BO5 | 胜者晋级总决赛</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bracket-round">
-                        <div class="round-name">总决赛</div>
-                        <ul class="match-list">
-                            <li class="match-item">
-                                <div class="match-teams">🆚 胜者组第一 vs 败者组决赛胜者</div>
-                                <div class="match-format">BO5 | 胜者组第一带1-0优势进入总决赛</div>
-                                <div class="match-result match-pending">⏰ 待比赛</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title">🎮 战术对决要点</h2>
             
-            <div class="special-note editable-section">
-                <h4>🎯 总决赛特别规则</h4>
-                <p><strong>对决：</strong>胜者组第一（带1-0优势） vs 败者组决赛胜者<br>
-                <strong>赛制：</strong>BO5（五局三胜制）<br>
-                <strong>结果：</strong>胜者为总冠军，败者为亚军</p>
+            <div class="tactical-points">
+                <div class="tactical-card">
+                    <h3 class="tactical-title">1. 前期节奏战</h3>
+                    <div class="tactical-content">
+                        <p><strong>🎯 青烟的开矿战术</strong> vs <strong>🔥 圈圈的前期骚扰</strong></p>
+                        <p>• 青烟能否在前期建立稳固的经济优势？</p>
+                        <p>• 圈圈能否通过前期骚扰打乱青烟的节奏？</p>
+                    </div>
+                </div>
+                
+                <div class="tactical-card">
+                    <h3 class="tactical-title">2. 中期团战</h3>
+                    <div class="tactical-content">
+                        <p><strong>⚔️ 杀鸡的暴力输出</strong> vs <strong>🤝 眼泪+节制的配合</strong></p>
+                        <p>• 杀鸡的兽族硬刚能否突破眼泪的防守？</p>
+                        <p>• 圈圈队的团队配合能否压制青烟队？</p>
+                    </div>
+                </div>
+                
+                <div class="tactical-card">
+                    <h3 class="tactical-title">3. 后期决胜</h3>
+                    <div class="tactical-content">
+                        <p><strong>🏰 青烟的滚雪球优势</strong> vs <strong>💪 圈圈队的绝境爆发</strong></p>
+                        <p>• 眼泪+节制的最佳22组合能否发挥作用？</p>
+                        <p>• RAY的KOG女猎战术能否成为关键变数？</p>
+                    </div>
+                </div>
             </div>
         </section>
-        
-        <!-- 战绩榜板块 -->
+
+        <!-- Star Matchup Section -->
         <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">📊 详细战绩榜</h2>
-                <div class="standings-meta">
-                    <span class="meta-item">📈 更新时间: 2026-03-30 11:38:00</span>
-                    <span class="meta-item">👥 参赛选手: 42人</span>
-                    <span class="meta-item">⚔️ 总场次: 1177场</span>
+            <h2 class="section-title">🏆 明星对决看点</h2>
+            
+            <div class="matchup-grid">
+                <div class="matchup-card">
+                    <div class="matchup-title">战术大师 vs 浴火重生</div>
+                    <div class="matchup-vs">
+                        <div class="matchup-player">🏰 青烟</div>
+                        <div class="vs-symbol">VS</div>
+                        <div class="matchup-player">⭕ 圈圈</div>
+                    </div>
+                    <p>开矿战术大师 vs 逆袭传奇的缩影</p>
+                    <p>体系化作战 vs 关键时刻爆发</p>
                 </div>
-            </div>
-
-            <div class="standings-container">
-                <div class="table-wrapper">
-                    <table class="standings-table">
-                        <thead>
-                            <tr>
-                                <th class="rank-header">排名</th>
-                                <th class="player-header">选手</th>
-                                <th class="race-header">种族</th>
-                                <th class="power-header">战力</th>
-                                <th class="matches-header">场次</th>
-                                <th class="wins-header">胜场</th>
-                                <th class="losses-header">负场</th>
-                                <th class="diff-header">净胜</th>
-                                <th class="rate-header">胜率</th>
-                                <th class="points-header">积分</th>
-                            </tr>
-                        </thead>
-                        <tbody id="standingsBody">
-        <tr class="player-row">
-            <td class="rank-cell">1</td>
-            <td class="player-cell">
-                <div class="player-name">老虎</div>
-                                <div class="champion-badge">🏆 Wcup4#冠军、Wcup5#冠军、Wcup6#战队赛胜</div>
-            </td>
-            <td class="race-cell NE">NE</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">89</td>
-            <td class="wins-cell">53</td>
-            <td class="losses-cell">36</td>
-            <td class="diff-cell">+17</td>
-            <td class="rate-cell" style="color: #ffc107">59.55%</td>
-            <td class="points-cell">159</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">2</td>
-            <td class="player-cell">
-                <div class="player-name">浪漫</div>
-                                <div class="champion-badge">🏆 第一届联赛冠军、Wcup1#冠军、Wcup3#冠军、Wcup5#冠军</div>
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">65</td>
-            <td class="wins-cell">51</td>
-            <td class="losses-cell">14</td>
-            <td class="diff-cell">+37</td>
-            <td class="rate-cell" style="color: #28a745">78.46%</td>
-            <td class="points-cell">153</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">3</td>
-            <td class="player-cell">
-                <div class="player-name">节制</div>
                 
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">53</td>
-            <td class="wins-cell">31</td>
-            <td class="losses-cell">22</td>
-            <td class="diff-cell">+9</td>
-            <td class="rate-cell" style="color: #ffc107">58.49%</td>
-            <td class="points-cell">93</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">4</td>
-            <td class="player-cell">
-                <div class="player-name">炮哥</div>
-                                <div class="champion-badge">🏆 Wcup2#冠军、Wcup6#战队赛胜</div>
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">58</td>
-            <td class="wins-cell">29</td>
-            <td class="losses-cell">29</td>
-            <td class="diff-cell">+0</td>
-            <td class="rate-cell" style="color: #ffc107">50.00%</td>
-            <td class="points-cell">87</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">5</td>
-            <td class="player-cell">
-                <div class="player-name">蚂蚁</div>
-                                <div class="champion-badge">🏆 第一届联赛冠军</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">59</td>
-            <td class="wins-cell">29</td>
-            <td class="losses-cell">30</td>
-            <td class="diff-cell">-1</td>
-            <td class="rate-cell" style="color: #dc3545">43.94%</td>
-            <td class="points-cell">87</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">6</td>
-            <td class="player-cell">
-                <div class="player-name">圈圈</div>
-                
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">B</td>
-            <td class="matches-cell">56</td>
-            <td class="wins-cell">27</td>
-            <td class="losses-cell">29</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">44.26%</td>
-            <td class="points-cell">81</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">7</td>
-            <td class="player-cell">
-                <div class="player-name">胖歌</div>
-                                <div class="champion-badge">🏆 Wcup2#冠军</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">66</td>
-            <td class="wins-cell">27</td>
-            <td class="losses-cell">39</td>
-            <td class="diff-cell">-12</td>
-            <td class="rate-cell" style="color: #dc3545">40.91%</td>
-            <td class="points-cell">81</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">8</td>
-            <td class="player-cell">
-                <div class="player-name">佛爷</div>
-                                <div class="champion-badge">🏆 Wcup1#冠军</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">42</td>
-            <td class="wins-cell">25</td>
-            <td class="losses-cell">17</td>
-            <td class="diff-cell">+8</td>
-            <td class="rate-cell" style="color: #ffc107">59.52%</td>
-            <td class="points-cell">75</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">9</td>
-            <td class="player-cell">
-                <div class="player-name">跳劈</div>
-                                <div class="champion-badge">🏆 第一届联赛冠军</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">36</td>
-            <td class="wins-cell">23</td>
-            <td class="losses-cell">13</td>
-            <td class="diff-cell">+10</td>
-            <td class="rate-cell" style="color: #ffc107">63.89%</td>
-            <td class="points-cell">69</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">10</td>
-            <td class="player-cell">
-                <div class="player-name">如来</div>
-                                <div class="champion-badge">🏆 Wcup1#冠军、Wcup4#冠军</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">40</td>
-            <td class="wins-cell">22</td>
-            <td class="losses-cell">18</td>
-            <td class="diff-cell">+4</td>
-            <td class="rate-cell" style="color: #ffc107">52.38%</td>
-            <td class="points-cell">66</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">11</td>
-            <td class="player-cell">
-                <div class="player-name">Ray</div>
-                                <div class="champion-badge">🏆 Wcup4#冠军</div>
-            </td>
-            <td class="race-cell NE">NE</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">43</td>
-            <td class="wins-cell">22</td>
-            <td class="losses-cell">21</td>
-            <td class="diff-cell">+1</td>
-            <td class="rate-cell" style="color: #ffc107">51.16%</td>
-            <td class="points-cell">66</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">12</td>
-            <td class="player-cell">
-                <div class="player-name">随笔</div>
-                                <div class="champion-badge">🏆 Wcup3#冠军</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">46</td>
-            <td class="wins-cell">20</td>
-            <td class="losses-cell">26</td>
-            <td class="diff-cell">-6</td>
-            <td class="rate-cell" style="color: #dc3545">37.74%</td>
-            <td class="points-cell">60</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">13</td>
-            <td class="player-cell">
-                <div class="player-name">西瓜</div>
-                                <div class="champion-badge">🏆 Wcup2#冠军</div>
-            </td>
-            <td class="race-cell NE">NE</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">29</td>
-            <td class="wins-cell">19</td>
-            <td class="losses-cell">10</td>
-            <td class="diff-cell">+9</td>
-            <td class="rate-cell" style="color: #ffc107">54.29%</td>
-            <td class="points-cell">57</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">14</td>
-            <td class="player-cell">
-                <div class="player-name">Cap</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">38</td>
-            <td class="wins-cell">19</td>
-            <td class="losses-cell">19</td>
-            <td class="diff-cell">+0</td>
-            <td class="rate-cell" style="color: #ffc107">50.00%</td>
-            <td class="points-cell">57</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">15</td>
-            <td class="player-cell">
-                <div class="player-name">AM</div>
-                
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">33</td>
-            <td class="wins-cell">17</td>
-            <td class="losses-cell">16</td>
-            <td class="diff-cell">+1</td>
-            <td class="rate-cell" style="color: #ffc107">51.52%</td>
-            <td class="points-cell">51</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">16</td>
-            <td class="player-cell">
-                <div class="player-name">马里奥</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">34</td>
-            <td class="wins-cell">17</td>
-            <td class="losses-cell">17</td>
-            <td class="diff-cell">+0</td>
-            <td class="rate-cell" style="color: #ffc107">50.00%</td>
-            <td class="points-cell">51</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">17</td>
-            <td class="player-cell">
-                <div class="player-name">中山</div>
-                                <div class="champion-badge">🏆 Wcup6#战队赛胜</div>
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">47</td>
-            <td class="wins-cell">17</td>
-            <td class="losses-cell">30</td>
-            <td class="diff-cell">-13</td>
-            <td class="rate-cell" style="color: #dc3545">32.69%</td>
-            <td class="points-cell">51</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">18</td>
-            <td class="player-cell">
-                <div class="player-name">青烟</div>
-                
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">34</td>
-            <td class="wins-cell">16</td>
-            <td class="losses-cell">18</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">47.06%</td>
-            <td class="points-cell">48</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">19</td>
-            <td class="player-cell">
-                <div class="player-name">玉兔</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">19</td>
-            <td class="wins-cell">12</td>
-            <td class="losses-cell">7</td>
-            <td class="diff-cell">+5</td>
-            <td class="rate-cell" style="color: #ffc107">63.16%</td>
-            <td class="points-cell">36</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">20</td>
-            <td class="player-cell">
-                <div class="player-name">同强</div>
-                                <div class="champion-badge">🏆 Wcup6#战队赛胜</div>
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">26</td>
-            <td class="wins-cell">12</td>
-            <td class="losses-cell">14</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">36.36%</td>
-            <td class="points-cell">36</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">21</td>
-            <td class="player-cell">
-                <div class="player-name">周一</div>
-                                <div class="champion-badge">🏆 Wcup3#冠军</div>
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">20</td>
-            <td class="wins-cell">11</td>
-            <td class="losses-cell">9</td>
-            <td class="diff-cell">+2</td>
-            <td class="rate-cell" style="color: #ffc107">55.00%</td>
-            <td class="points-cell">33</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">22</td>
-            <td class="player-cell">
-                <div class="player-name">霸王</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">18</td>
-            <td class="wins-cell">10</td>
-            <td class="losses-cell">8</td>
-            <td class="diff-cell">+2</td>
-            <td class="rate-cell" style="color: #ffc107">55.56%</td>
-            <td class="points-cell">30</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">23</td>
-            <td class="player-cell">
-                <div class="player-name">涛神</div>
-                
-            </td>
-            <td class="race-cell NE">NE</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">23</td>
-            <td class="wins-cell">10</td>
-            <td class="losses-cell">13</td>
-            <td class="diff-cell">-3</td>
-            <td class="rate-cell" style="color: #dc3545">43.48%</td>
-            <td class="points-cell">30</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">24</td>
-            <td class="player-cell">
-                <div class="player-name">村仔</div>
-                
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">17</td>
-            <td class="wins-cell">9</td>
-            <td class="losses-cell">8</td>
-            <td class="diff-cell">+1</td>
-            <td class="rate-cell" style="color: #ffc107">52.94%</td>
-            <td class="points-cell">27</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">25</td>
-            <td class="player-cell">
-                <div class="player-name">眼泪</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">18</td>
-            <td class="wins-cell">9</td>
-            <td class="losses-cell">9</td>
-            <td class="diff-cell">+0</td>
-            <td class="rate-cell" style="color: #ffc107">50.00%</td>
-            <td class="points-cell">27</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">26</td>
-            <td class="player-cell">
-                <div class="player-name">雪碧</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">23</td>
-            <td class="wins-cell">9</td>
-            <td class="losses-cell">14</td>
-            <td class="diff-cell">-5</td>
-            <td class="rate-cell" style="color: #dc3545">39.13%</td>
-            <td class="points-cell">27</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">27</td>
-            <td class="player-cell">
-                <div class="player-name">长岛</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">14</td>
-            <td class="wins-cell">8</td>
-            <td class="losses-cell">6</td>
-            <td class="diff-cell">+2</td>
-            <td class="rate-cell" style="color: #ffc107">57.14%</td>
-            <td class="points-cell">24</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">28</td>
-            <td class="player-cell">
-                <div class="player-name">爱皇</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">B</td>
-            <td class="matches-cell">14</td>
-            <td class="wins-cell">6</td>
-            <td class="losses-cell">8</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">42.86%</td>
-            <td class="points-cell">18</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">29</td>
-            <td class="player-cell">
-                <div class="player-name">甘宁</div>
-                
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">13</td>
-            <td class="wins-cell">5</td>
-            <td class="losses-cell">8</td>
-            <td class="diff-cell">-3</td>
-            <td class="rate-cell" style="color: #dc3545">38.46%</td>
-            <td class="points-cell">15</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">30</td>
-            <td class="player-cell">
-                <div class="player-name">神明</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">B</td>
-            <td class="matches-cell">13</td>
-            <td class="wins-cell">5</td>
-            <td class="losses-cell">8</td>
-            <td class="diff-cell">-3</td>
-            <td class="rate-cell" style="color: #dc3545">38.46%</td>
-            <td class="points-cell">15</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">31</td>
-            <td class="player-cell">
-                <div class="player-name">飞哥</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">B</td>
-            <td class="matches-cell">13</td>
-            <td class="wins-cell">5</td>
-            <td class="losses-cell">8</td>
-            <td class="diff-cell">-3</td>
-            <td class="rate-cell" style="color: #dc3545">38.46%</td>
-            <td class="points-cell">15</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">32</td>
-            <td class="player-cell">
-                <div class="player-name">寒冰</div>
-                
-            </td>
-            <td class="race-cell NE">NE</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">10</td>
-            <td class="wins-cell">4</td>
-            <td class="losses-cell">6</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">40.00%</td>
-            <td class="points-cell">12</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">33</td>
-            <td class="player-cell">
-                <div class="player-name">飞仙</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">B</td>
-            <td class="matches-cell">10</td>
-            <td class="wins-cell">4</td>
-            <td class="losses-cell">6</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">40.00%</td>
-            <td class="points-cell">12</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">34</td>
-            <td class="player-cell">
-                <div class="player-name">底座</div>
-                
-            </td>
-            <td class="race-cell NE">NE</td>
-            <td class="power-cell">B</td>
-            <td class="matches-cell">10</td>
-            <td class="wins-cell">4</td>
-            <td class="losses-cell">6</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">40.00%</td>
-            <td class="points-cell">12</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">35</td>
-            <td class="player-cell">
-                <div class="player-name">橙子</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">B</td>
-            <td class="matches-cell">10</td>
-            <td class="wins-cell">4</td>
-            <td class="losses-cell">6</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">40.00%</td>
-            <td class="points-cell">12</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">36</td>
-            <td class="player-cell">
-                <div class="player-name">喜茶</div>
-                
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">10</td>
-            <td class="wins-cell">4</td>
-            <td class="losses-cell">6</td>
-            <td class="diff-cell">-2</td>
-            <td class="rate-cell" style="color: #dc3545">40.00%</td>
-            <td class="points-cell">12</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">37</td>
-            <td class="player-cell">
-                <div class="player-name">巧乐兹</div>
-                                <div class="champion-badge">🏆 Wcup6#战队赛胜</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">4</td>
-            <td class="wins-cell">3</td>
-            <td class="losses-cell">1</td>
-            <td class="diff-cell">+2</td>
-            <td class="rate-cell" style="color: #28a745">75.00%</td>
-            <td class="points-cell">9</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">38</td>
-            <td class="player-cell">
-                <div class="player-name">杀鸡</div>
-                                <div class="champion-badge">🏆 Wcup6#战队赛胜</div>
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">4</td>
-            <td class="wins-cell">3</td>
-            <td class="losses-cell">1</td>
-            <td class="diff-cell">+2</td>
-            <td class="rate-cell" style="color: #28a745">75.00%</td>
-            <td class="points-cell">9</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">39</td>
-            <td class="player-cell">
-                <div class="player-name">鸭子</div>
-                
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">5</td>
-            <td class="wins-cell">3</td>
-            <td class="losses-cell">2</td>
-            <td class="diff-cell">+1</td>
-            <td class="rate-cell" style="color: #ffc107">60.00%</td>
-            <td class="points-cell">9</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">40</td>
-            <td class="player-cell">
-                <div class="player-name">老黄</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">5</td>
-            <td class="wins-cell">3</td>
-            <td class="losses-cell">2</td>
-            <td class="diff-cell">+1</td>
-            <td class="rate-cell" style="color: #dc3545">27.27%</td>
-            <td class="points-cell">9</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">41</td>
-            <td class="player-cell">
-                <div class="player-name">强森</div>
-                                <div class="champion-badge">🏆 Wcup6#战队赛胜</div>
-            </td>
-            <td class="race-cell HUM">HUM</td>
-            <td class="power-cell">S</td>
-            <td class="matches-cell">2</td>
-            <td class="wins-cell">2</td>
-            <td class="losses-cell">0</td>
-            <td class="diff-cell">+2</td>
-            <td class="rate-cell" style="color: #28a745">100.00%</td>
-            <td class="points-cell">6</td>
-        </tr>
-        <tr class="player-row">
-            <td class="rank-cell">42</td>
-            <td class="player-cell">
-                <div class="player-name">爽子</div>
-                
-            </td>
-            <td class="race-cell ORC">ORC</td>
-            <td class="power-cell">A</td>
-            <td class="matches-cell">8</td>
-            <td class="wins-cell">2</td>
-            <td class="losses-cell">6</td>
-            <td class="diff-cell">-4</td>
-            <td class="rate-cell" style="color: #dc3545">25.00%</td>
-            <td class="points-cell">6</td>
-        </tr>
-                        </tbody>
-                    </table>
+                <div class="matchup-card">
+                    <div class="matchup-title">暴力输出 vs 坚韧卫士</div>
+                    <div class="matchup-vs">
+                        <div class="matchup-player">⚔️ 杀鸡</div>
+                        <div class="vs-symbol">VS</div>
+                        <div class="matchup-player">😭 眼泪</div>
+                    </div>
+                    <p>75.00%胜率的操作型选手 vs 绝境英雄</p>
+                    <p>暴力美学 vs 韧性不拔</p>
                 </div>
-            </div>
-
-            <div class="standings-stats">
-                <div class="stat-card">
-                    <div class="stat-number">611</div>
-                    <div class="stat-label">总胜场数</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">566</div>
-                    <div class="stat-label">总负场数</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">20胜以上选手</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">70%以上胜率</div>
+                
+                <div class="matchup-card">
+                    <div class="matchup-title">意识宗师 vs 天梯霸主</div>
+                    <div class="matchup-vs">
+                        <div class="matchup-player">⏰ 节制</div>
+                        <div class="vs-symbol">VS</div>
+                        <div class="matchup-player">🌲 RAY</div>
+                    </div>
+                    <p>传统人族代表 vs 暗夜精灵专精</p>
+                    <p>22配合大师 vs KOG女猎专家</p>
                 </div>
             </div>
         </section>
 
-        <!-- 战绩榜样式（优化宽度） -->
-        <style>
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .standings-meta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            background: rgba(74, 158, 255, 0.15);
-            padding: 8px 15px;
-            border-radius: 20px;
-            border: 1px solid rgba(74, 158, 255, 0.3);
-            font-size: 0.9em;
-            color: #a0c4ff;
-        }
-
-        .standings-container {
-            overflow-x: auto;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-
-        .table-wrapper {
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .standings-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 1200px;  /* 增加最小宽度确保所有列都能显示 */
-            table-layout: fixed;
-        }
-
-        .standings-table thead {
-            background: linear-gradient(135deg, #1a3a6e 0%, #2a5aa0 100%);
-        }
-
-        .standings-table th {
-            padding: 12px 8px;
-            text-align: center;
-            color: #4a9eff;
-            font-weight: bold;
-            font-size: 0.85em;
-            border: 1px solid rgba(74, 158, 255, 0.3);
-        }
-
-        .standings-table td {
-            padding: 10px 8px;
-            text-align: center;
-            border: 1px solid rgba(74, 158, 255, 0.2);
-            vertical-align: middle;
-            font-size: 0.9em;
-        }
-
-        .player-row {
-            transition: all 0.3s ease;
-            background: rgba(255,255,255,0.02);
-        }
-
-        .player-row:hover {
-            background: rgba(74, 158, 255, 0.1);
-            transform: scale(1.01);
-        }
-
-        /* 优化各列宽度 */
-        .rank-header, .rank-cell {
-            width: 50px;
-        }
-
-        .player-header, .player-cell {
-            width: 140px;
-            min-width: 120px;
-        }
-
-        .race-header, .race-cell {
-            width: 55px;
-            font-size: 0.85em;
-        }
-
-        .power-header, .power-cell {
-            width: 45px;
-        }
-
-        .matches-header, .matches-cell {
-            width: 55px;
-        }
-
-        .wins-header, .wins-cell {
-            width: 55px;
-        }
-
-        .losses-header, .losses-cell {
-            width: 55px;
-        }
-
-        .diff-header, .diff-cell {
-            width: 60px;
-        }
-
-        /* 重点优化胜率列宽度 */
-        .rate-header, .rate-cell {
-            width: 85px;  /* 增加胜率列宽度 */
-            font-weight: bold;
-        }
-
-        .points-header, .points-cell {
-            width: 70px;
-            font-weight: bold;
-        }
-
-        .player-cell {
-            text-align: left;
-        }
-
-        .player-name {
-            font-size: 1em;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .champion-badge {
-            font-size: 0.75em;
-            color: #ffd700;
-            margin-top: 5px;
-            line-height: 1.3;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .race-cell {
-            font-weight: bold;
-        }
-
-        .race-cell.HUM {
-            color: #4a9eff;
-        }
-
-        .race-cell.ORC {
-            color: #28a745;
-        }
-
-        .race-cell.NE {
-            color: #82c91e;
-        }
-
-        .race-cell.UD {
-            color: #fa5252;
-        }
-
-        .race-cell.Random {
-            color: #a0a0a0;
-        }
-
-        .power-cell {
-            font-weight: bold;
-            color: #ffc107;
-            font-size: 0.9em;
-        }
-
-        .wins-cell {
-            color: #40c057;
-            font-weight: bold;
-        }
-
-        .losses-cell {
-            color: #fa5252;
-        }
-
-        .diff-cell {
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .points-cell {
-            color: #ffd700;
-            font-weight: bold;
-        }
-
-        .standings-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, rgba(74, 158, 255, 0.1) 0%, rgba(0, 100, 200, 0.1) 100%);
-            border: 2px solid rgba(74, 158, 255, 0.3);
-            border-radius: 12px;
-            padding: 20px 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            border-color: rgba(74, 158, 255, 0.6);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 100, 200, 0.2);
-        }
-
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #4a9eff;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #a0c4ff;
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            .standings-meta {
-                flex-direction: column;
-                gap: 10px;
-            }
+        <!-- Prediction Section -->
+        <section class="section">
+            <h2 class="section-title">🔮 总决赛预测</h2>
             
-            .section-header {
-                flex-direction: column;
-                text-align: center;
-            }
+            <div class="prediction-container">
+                <div class="prediction-item">
+                    <h3>🔵 青烟队</h3>
+                    <div class="prediction-percentage qingyan-percent">55%</div>
+                    <p><strong>优势：</strong>胜者组冠军气势，青烟的开矿体系成熟</p>
+                    <p><strong>关键：</strong>杀鸡的暴力输出，RAY的天梯经验</p>
+                    <p><strong>制胜点：</strong>前期建立优势，不给圈圈队逆转机会</p>
+                </div>
+                
+                <div class="prediction-item">
+                    <h3>🟠 圈圈队</h3>
+                    <div class="prediction-percentage quanquan-percent">45%</div>
+                    <p><strong>优势：</strong>逆境之王，眼泪+节制的最佳22组合</p>
+                    <p><strong>关键：</strong>圈圈的浴火重生，团队的绝境爆发力</p>
+                    <p><strong>制胜点：</strong>拖入后期，创造逆转奇迹</p>
+                </div>
+            </div>
             
-            .standings-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .standings-table {
-                min-width: 1000px;
-            }
-        }
-        </style>
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px;">
+                <h3 style="font-size: 36px; color: #ff9f43; margin-bottom: 20px;">🏆 最终预测：青烟队 3:2 圈圈队</h3>
+                <p style="font-size: 18px; line-height: 1.8;">
+                    青烟队的战术体系更加成熟稳定，杀鸡的75.00%胜率和暴力输出是强力保障，带1-0优势进入总决赛。
+                    <br><br>
+                    <strong>但也不能忽视：</strong>魔兽33比赛永远充满变数，圈圈队的让2追3证明了一切皆有可能，眼泪+节制的最佳22组合是绝对王牌！
+                </p>
+            </div>
+        </section>
 
-        
-        <footer class="footer editable-section">
-            <p>🎮 人研所魔兽33对战赛程表 🎮</p>
-            <p style="margin-top: 10px;">Warcraft III 3v3 Tournament Schedule</p>
-            <p style="margin-top: 15px; font-size: 0.9em;">Powered by 人研所 | 最后更新：<span id="footer-time">2026年3月28日</span></p>
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">🎉 今晚，让我们见证传奇！</h2>
+            <p style="font-size: 24px; margin-bottom: 30px;">
+                无论是胜者组冠军的荣耀延续，还是败者组冠军的终极逆袭，<br>
+                今晚都将是一场载入史册的经典对决！
+            </p>
+            
+            <div class="cta-questions">
+                <div class="cta-question">❓ 青烟能否一雪小组赛失利的前耻，加冕冠军？</div>
+                <div class="cta-question">❓ 圈圈队能否延续败者组逆袭神话，完成终极逆转？</div>
+                <div class="cta-question">❓ 眼泪+节制的最佳22组合能否在总决赛中发挥作用？</div>
+                <div class="cta-question">❓ 杀鸡的暴力输出能否撕裂圈圈队的防守？</div>
+                <div class="cta-question">🔥 让我们拭目以待！</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>📅 比赛时间：2026年4月17日晚 | 🎮 赛制：BO5五局三胜（青烟队带1-0优势）| 🏆 冠军归属：今晚揭晓！</p>
+            <p style="margin-top: 15px;">发布时间：2026年4月17日 12:58 | 制作人：人研所魔兽33对战组委会</p>
         </footer>
     </div>
-    
-    <script>
-        // 自动更新时间
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleString('zh-CN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-            
-            const updateTimeElement = document.getElementById('update-time');
-            const footerTimeElement = document.getElementById('footer-time');
-            
-            if (updateTimeElement) {
-                updateTimeElement.textContent = timeString;
-            }
-            if (footerTimeElement) {
-                footerTimeElement.textContent = timeString;
-            }
-        }
-        
-        // 页面加载时更新时间，然后每分钟更新一次
-        updateTime();
-        setInterval(updateTime, 60000);
-    </script>
 </body>
 </html>
